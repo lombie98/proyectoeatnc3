@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Aprendiendo Git</title>
+    <link rel="stylesheet"href="css/style.css">
+  </head>
+  <body>
+    <!--
+      Aca podes hacer anotaciones con <codigo>
+    -->
+    <img width="150" src="img/git.png">
+    <h1>Aprendiendo Git</h1>
+    <h2 style="color:red;">(y no morir en el intento...)</h2>
+     <p>Git es un software de <p><strong>control de versiones</strong></p> diseñado por <a href="https://es.wikipedia.org/wiki/Linus_Torvalds" target="_blank">Linus Torvalds</a>.</p>
+    <img id="torvalds" width="150" src="img/linus.jpg">
+    <h2>add & commit</h2>
+    <p>
+        Puedes registrar cambios (añadirlos al Index) usando
+        <p><strong>git add -filename-
+        git add .</strong></p>
+        Este es el primer paso en el flujo de trabajo básico. Para hacer commit a estos cambios usa
+        <p><strong>git commit -m "Commit message"</strong></p>
+        Ahora el archivo esta incluído en el HEAD, pero aún no en tu repositorio remoto.
+    </p>
+    <h2>envío de cambios</h2>
+    <p>
+      Tus cambios están ahora en el HEAD de tu copia local. Para enviar estos cambios a tu repositorio remoto ejecuta 
+      <p><strong>git push origin master</strong></p>
+      Reemplaza master por la rama a la que quieres enviar tus cambios. 
+
+      Si no has clonado un repositorio ya existente y quieres conectar tu repositorio local a un repositorio remoto, usa
+      <p><strong> git remote add origin -server- </strong></p>
+      Ahora podrás subir tus cambios al repositorio remoto seleccionado.
+    </p>
+    <h2>Ramas</h2>
+    <p>
+      Las ramas son utilizadas para desarrollar funcionalidades aisladas unas de otras. La rama master es la rama "por defecto" cuando creas un repositorio. Crea nuevas ramas durante el desarrollo y fusiónalas a la rama principal cuando termines.
+
+
+      Crea una nueva rama llamada "feature_x" y cámbiate a ella usando
+      <p> <strong>git checkout -b feature_x</strong></p>
+      vuelve a la rama principal
+      <p><strong>git checkout master</strong></p>
+      y borra la rama
+      <p><strong>git branch -d feature_x</strong></p>
+      Una rama nueva no estará disponible para los demás a menos que subas (push) la rama a tu repositorio remoto
+      <p><strong>git push origin <branch></strong></p>
+    </p>
+   <h2>actualiza & fusiona</h2>
+   <p>
+      Para actualizar tu repositorio local al commit más nuevo, ejecuta 
+      <p><strong>git pull</strong></p>
+      en tu directorio de trabajo para bajar y fusionar los cambios remotos.
+      Para fusionar otra rama a tu rama activa (por ejemplo master), utiliza
+      <p><strong>git merge <branch></strong></p>
+      en ambos casos git intentará fusionar automáticamente los cambios. Desafortunadamente, no siempre será posible y se podrán producir conflictos. Tú eres responsable de fusionar esos conflictos manualmente al editar los archivos mostrados por git. Después de modificarlos, necesitas marcarlos como fusionados con
+      <p><strong>git add <filename></strong></p>
+      Antes de fusionar los cambios, puedes revisarlos usando
+      <p><strong>git diff <source_branch> <target_branch></strong></p>
+    <h2>etiquetas</h2>
+    <p>
+      Se recomienda crear etiquetas para cada nueva versión publicada de un software. Este concepto no es nuevo, ya que estaba disponible en SVN. Puedes crear una nueva etiqueta llamada 1.0.0 ejecutando
+      <p><strong>git tag 1.0.0 1b2e1d63ff</strong></p>
+      1b2e1d63ff se refiere a los 10 caracteres del commit id al cual quieres referirte con tu etiqueta. Puedes obtener el commit id con 
+      <p><strong>git log</strong></p>
+      también puedes usar menos caracteres que el commit id, pero debe ser un valor único.
+    </p>
+  </body>
+</html>

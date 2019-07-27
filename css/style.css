@@ -1,0 +1,64 @@
+/* Anatomia de las reglas CSS */
+      /*
+        selector {
+          propiedad: valor;
+          propiedad: valor;
+          propiedad: valor;
+        }
+      */
+      strong{
+        color:lightblue;
+      }
+      body {
+        /*tamaño de tipografia*/
+        font-size: 18px;
+        /*tipografia*/
+        font-family: Arial;
+        /*color de fondo*/
+        background-color: black ;
+        /*alineacion de texto*/
+        text-align: justify;
+        /*color de la tipografia*/
+        color: #ff4e05;
+        /*lugar que ocupa la caja fijaS*/
+        width:600px;
+        /*defino margenes, en este caso automatico*/
+        margin-left: auto;
+        margin-right: auto;
+      }
+      h1, h2, h3, h4, h5 {
+        text-align: center;
+        text-decoration: underline;
+        font-size: 21px;
+        font-family: Arial;
+        background-color: #1bec59;
+        color: #451863;
+      }
+      a {
+        color: #FFF;
+        background-color: #000;
+        text-decoration: none;
+        font-family: Helvetica, Arial, Open Sans, sans-serif;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+      /*cuando el usuario pasa por encima del vinculo*/
+      a:hover {
+        color: orange;
+        background-color: darkblue;
+      }
+      p{
+        /*interlineado*/
+        line-height: 100%;
+      }
+      #torvalds {
+        /*hace que se comporte como caja el elemento*/
+        display: block;
+
+        margin:0 auto 0 auto;
+        /*caracteristicas del borde, primero el tipo de linea, despues el grosor, y por ultimo el color*/
+        border-left: solid 5px white;
+        border-top:solid 5px white;
+        border-right: solid 5px white;
+        border-bottom: solid 20px white;
+      }
